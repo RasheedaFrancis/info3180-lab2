@@ -1,0 +1,33 @@
+
+    {% extends "base.html" %}
+    {% block main %}
+    <div class="container">
+        <div class="profile_heading">
+            <img src="{{ url_for('static', filename='profilephoto.jpg') }}" alt="profilephoto" class="profile_picture">
+            <h1>Rasheeda Francis</h1>
+            <h2>@RFrancis</h2>
+            <h2>Kingston, Jamaica</h2> 
+            <h2>Joined {{formatted_date}}</h2>
+        </div>
+        <div class="profile_bio">
+            <p>I am an enthusiastic and experienced website designer and developer who is committed to producing great online experiences. If you're ready to bring your vision to reality, let's work together on your next project. Contact me to get started!</p>
+        </div>   
+        <div class="profile_stats" id="stats">
+            <div>
+                <p><span class="profile_number">20</span></p>
+                <p>Posts</p>
+            </div>
+            <div>
+                <p><span class="profile_number">150</span></p>
+                <p>Following</p>
+            </div>
+            <div>
+                <p><span class="profile_number">900</span></p>
+                <p>Followers</p>
+            </div>
+        </div>
+            <button id="myButton" class="custom-button">Follow</button>
+        </div>
+    </div>
+    {% endblock %}
+   

@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+import datetime
 
 
 ###
@@ -16,6 +17,30 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
+
+
+@app.route('/profile')
+def profile():
+    """Render website's profile page."""
+    date_joined = '2024-02-17'
+    formatted_date = format_date_joined(date_joined)
+    return render_template('profile.html', formatted_date=formatted_date)
+
+def format_date_joined(date_joined):
+    """
+    Function to format the date joined as Month, Year (e.g. Feb, 2021)
+    """
+    date_obj = datetime.datetime.strptime(date_joined, '%Y-%m-%d').date()
+    formatted_date = date_obj.strftime('%B, %Y')
+    return formatted_date
+  
+  
+
+
+
+
+
+
 
 
 ###
